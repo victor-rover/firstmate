@@ -1,0 +1,13 @@
+forge payload for this one review: 1004 bytes
+stored observation.reviews[0]:
+{
+  "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "id": 42,
+  "state": "CHANGES_REQUESTED",
+  "submitted_at": "2026-09-16T07:50:00Z",
+  "user": {
+    "login": "maintainer"
+  }
+}
+stored pending signal (body still carried as an event):
+{"author":"maintainer","body":"Please rework the ledger write path, and see the three inline notes.","head":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","source":"https://github.com/o/r/pull/8#pullrequestreview-42","token":"review:42:2026-09-16T07:50:00Z:CHANGES_REQUESTED","type":"review"}

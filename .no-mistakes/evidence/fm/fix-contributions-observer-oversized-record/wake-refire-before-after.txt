@@ -1,0 +1,13 @@
+=== pre-fix checker (5f2b81bc) ===
+first poll woke the captain for 60 review signal(s)
+queued wake rows: 60
+queued wake rows after the watcher drained and acknowledged: 0
+second poll of the same unchanged PR woke the captain for 60 review signal(s)
+queued wake rows after the second poll: 60
+
+=== fixed checker (c8e48373) ===
+first poll woke the captain for 60 review signal(s)
+queued wake rows: 60
+queued wake rows after the watcher drained and acknowledged: 0
+second poll of the same unchanged PR woke the captain for 0 review signal(s)
+queued wake rows after the second poll: 0

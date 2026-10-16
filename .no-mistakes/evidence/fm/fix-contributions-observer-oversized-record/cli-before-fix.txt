@@ -1,0 +1,24 @@
+review history returned by the forge: 300 reviews, 1689804 bytes
+
+$ fm-contributions.sh poll   # the registered check observes the PR
+(60 contribution-wake lines, one per maintainer review signal)
+durable record written: 1888237 bytes (read cap is 1048576)
+wakes enqueued after first observation: 60
+
+$ fm-contributions.sh poll   # second wake on an unchanged PR
+contributions: 1 unreadable durable record(s)
+wakes enqueued after re-poll: 60
+
+$ fm-contributions.sh pending
+FAILED (exit 1): fm-contributions: 1 unreadable contribution record(s); pending signals are unverified
+
+$ fm-contributions.sh verdict delivery <url> <head> <review-url> fleet 'address requested changes'
+fm-contributions: observe the contribution before recording evidence
+verdict REFUSED (exit 1)
+
+$ fm-contributions.sh ack delivery <url> <token>
+fm-contributions: observe the contribution before recording evidence
+ack REFUSED (exit 1)
+
+$ fm-contributions.sh snapshot <fleet input> --all   # what the supervisor sees
+{"unreadable_records":1,"rows":[{"task":"delivery","url":"https://github.com/o/r/pull/8","stale_verdicts":0,"reviews":[]}]}

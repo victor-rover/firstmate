@@ -1,0 +1,20 @@
+review history returned by the forge: 300 reviews, 1689804 bytes
+
+$ fm-contributions.sh poll   # the registered check observes the PR
+durable record written: 187495 bytes (read cap is 1048576)
+wakes enqueued after first observation: 60
+
+$ fm-contributions.sh poll   # second wake on an unchanged PR
+wakes enqueued after re-poll: 60
+
+$ fm-contributions.sh pending
+60 pending signal(s); first: {"type":"review","author":"helper","head":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","source":"https://github.com/o/r/pull/8#pullrequestreview-1005"}
+
+$ fm-contributions.sh verdict delivery <url> <head> <review-url> fleet 'address requested changes'
+verdict recorded
+
+$ fm-contributions.sh ack delivery <url> <token>
+acknowledged
+
+$ fm-contributions.sh snapshot <fleet input> --all   # what the supervisor sees
+{"unreadable_records":0,"rows":[{"task":"delivery","url":"https://github.com/o/r/pull/8","stale_verdicts":1,"reviews":[{"id":1295,"state":"APPROVED","submitted_at":"2026-09-16T06:49:10Z","commit_id":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","user":{"login":"helper"},"freshness":"STALE"},{"id":1290,"state":"CHANGES_REQUESTED","submitted_at":"2026-09-16T06:48:20Z","commit_id":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","user":{"login":"maintainer"},"freshness":"current"}]}]}

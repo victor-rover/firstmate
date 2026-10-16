@@ -1,0 +1,89 @@
+== pending signals a supervisor retrieves ==
+[
+  {
+    "author": "maintainer",
+    "body": "first pass",
+    "head": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "source": "https://github.com/o/r/pull/8#pullrequestreview-1",
+    "type": "review"
+  },
+  {
+    "author": "maintainer",
+    "body": "second pass",
+    "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source": "https://github.com/o/r/pull/8#pullrequestreview-2",
+    "type": "review"
+  },
+  {
+    "author": "helper",
+    "body": "no head, no time",
+    "head": null,
+    "source": "https://github.com/o/r/pull/8#pullrequestreview-4",
+    "type": "review"
+  },
+  {
+    "author": "chatty",
+    "body": "just talking",
+    "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source": "https://github.com/o/r/pull/8#pullrequestreview-5",
+    "type": "review"
+  }
+]
+== snapshot rows ==
+{
+  "rows": [
+    {
+      "actor": "fleet",
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reason": "incoming maintainer signal needs triage",
+      "reviews": [
+        {
+          "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "freshness": "current",
+          "id": 3,
+          "login": null,
+          "state": "APPROVED",
+          "submitted_at": "2026-09-16T07:30:00Z"
+        },
+        {
+          "commit_id": null,
+          "freshness": "STALE",
+          "id": 4,
+          "login": "helper",
+          "state": "DISMISSED",
+          "submitted_at": null
+        },
+        {
+          "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "freshness": "current",
+          "id": 2,
+          "login": "maintainer",
+          "state": "APPROVED",
+          "submitted_at": "2026-09-16T07:20:00Z"
+        }
+      ],
+      "stale_verdicts": 1,
+      "task": "delivery",
+      "url": "https://github.com/o/r/pull/8"
+    }
+  ],
+  "unreadable_records": 0
+}
+== bearings contribution coverage ==
+{
+  "checked": 1,
+  "complete": true,
+  "counts": {
+    "captain": 0,
+    "fleet": 1,
+    "maintainer": 0,
+    "nobody": 0
+  },
+  "known": 1,
+  "missing_verdicts": 0,
+  "proven_clear": true,
+  "stale_verdicts": 1
+}
+
+--- diff of this output between the pre-fix (5f2b81bc) and fixed (c8e48373) checker ---
+(no differences)
